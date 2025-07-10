@@ -51,7 +51,7 @@
         "item_condition": {
             "type": "apoli:ingredient",
             "ingredient": {
-                "item": "shield"
+                "tag": "*:shields"
             }
         },
         "condition": {

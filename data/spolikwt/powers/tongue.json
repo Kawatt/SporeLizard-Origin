@@ -41,6 +41,7 @@
                     "else_action": {
                         "type": "apoli:damage",
                         "amount": 1,
+                        "damage_type": "minecraft:cactus",
                         "source": {
                             "name": "cactus"
                         }
