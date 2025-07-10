@@ -1,0 +1,16 @@
+{
+    "name": "Syntesis",
+    "description": "You can only regenerate health when around plants.",
+    "type": "apoli:disable_regen",
+    "condition": {
+        "inverted": true,
+        "type": "apoli:block_in_radius",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "*:plants"
+        },
+        "radius": 3,
+        "comparison": ">=",
+        "compare_to": 3
+    }
+}

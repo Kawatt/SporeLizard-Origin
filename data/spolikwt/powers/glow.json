@@ -1,0 +1,986 @@
+{
+    "name": "Glow",
+    "description": "You can glow at will.",
+    "type": "apoli:multiple",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": [
+                "Toggle with [",
+                {
+                    "keybind": "key.origins.secondary_active"
+                },
+                "]"
+            ]
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": [
+                "Change the color of the glow by holding a dye in your offhand while sneaking and press [",
+                {
+                    "keybind": "key.use"
+                },
+                "]"
+            ]
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": [
+                "Reset the glow color by using a water bottle."
+            ]
+        }
+    ],
+    "toggle": {
+        "type": "apoli:toggle",
+        "active_by_default": false,
+        "key": {
+            "key": "key.origins.secondary_active"
+        }
+    },
+    "green": {
+        "type": "apoli:self_glow",
+        "use_teams": false,
+        "green": 1,
+        "red": 0,
+        "blue": 0.6,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_orange",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_yellow",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_cyan",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "green2": {
+        "type": "apoli:particle",
+        "particle": {
+            "type": "dust",
+            "params": "0 1 0.6 0.8"
+        },
+        "frequency": 8,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 1
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_orange",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_yellow",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_cyan",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "orange": {
+        "type": "apoli:self_glow",
+        "use_teams": false,
+        "green": 0.6,
+        "red": 1,
+        "blue": 0,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "apoli:relative_health",
+                                            "comparison": "<",
+                                            "compare_to": 0.5
+                                        },
+                                        {
+                                            "type": "apoli:resource",
+                                            "resource": "*:*_hit",
+                                            "comparison": "!=",
+                                            "compare_to": 0
+                                        },
+                                        {
+                                            "type": "apoli:on_fire"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "orange2": {
+        "type": "apoli:particle",
+        "particle": {
+            "type": "dust",
+            "params": "1 0.6 0 0.8"
+        },
+        "frequency": 8,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 2
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "apoli:relative_health",
+                                            "comparison": "<",
+                                            "compare_to": 0.5
+                                        },
+                                        {
+                                            "type": "apoli:resource",
+                                            "resource": "*:*_hit",
+                                            "comparison": "!=",
+                                            "compare_to": 0
+                                        },
+                                        {
+                                            "type": "apoli:on_fire"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "purple": {
+        "type": "apoli:self_glow",
+        "use_teams": false,
+        "green": 0,
+        "red": 0.6,
+        "blue": 1,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 3
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "apoli:resource",
+                                            "resource": "*:*_hurt",
+                                            "comparison": "!=",
+                                            "compare_to": 0
+                                        },
+                                        {
+                                            "type": "apoli:status_effect",
+                                            "effect": "minecraft:darkness"
+                                        },
+                                        {
+                                            "type": "apoli:on_block",
+                                            "block_condition": {
+                                                "type": "apoli:block",
+                                                "block": "minecraft:bedrock"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "purple2": {
+        "type": "apoli:particle",
+        "particle": {
+            "type": "dust",
+            "params": "0.6 0 1 0.8"
+        },
+        "frequency": 8,
+        "green": 0,
+        "red": 0.6,
+        "blue": 1,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 3
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "apoli:resource",
+                                            "resource": "*:*_hurt",
+                                            "comparison": "!=",
+                                            "compare_to": 0
+                                        },
+                                        {
+                                            "type": "apoli:status_effect",
+                                            "effect": "minecraft:darkness"
+                                        },
+                                        {
+                                            "type": "apoli:on_block",
+                                            "block_condition": {
+                                                "type": "apoli:block",
+                                                "block": "minecraft:bedrock"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "yellow": {
+        "type": "apoli:self_glow",
+        "use_teams": false,
+        "green": 1,
+        "red": 1,
+        "blue": 0,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 4
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_sun",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_orange",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_cyan",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                        
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "yellow2": {
+        "type": "apoli:particle",
+        "particle": {
+            "type": "dust",
+            "params": "1 1 0 0.8"
+        },
+        "frequency": 8,
+        "green": 1,
+        "red": 1,
+        "blue": 0,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 4
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_sun",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_orange",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_cyan",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                        
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "cyan": {
+        "type": "apoli:self_glow",
+        "use_teams": false,
+        "green": 1,
+        "red": 0,
+        "blue": 1,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 5
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "apoli:submerged_in",
+                                    "fluid": "minecraft:water"
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_orange",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "cyan2": {
+        "type": "apoli:particle",
+        "particle": {
+            "type": "dust",
+            "params": "0 1 1 0.8"
+        },
+        "frequency": 8,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:or",
+                    "conditions": [
+                        {
+                            "type": "apoli:resource",
+                            "resource": "*:*_dye",
+                            "comparison": "==",
+                            "compare_to": 5
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "apoli:resource",
+                                    "resource": "*:*_dye",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "apoli:submerged_in",
+                                    "fluid": "minecraft:water"
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_orange",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:power_active",
+                                    "power": "*:*_purple",
+                                    "inverted": true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "magenta": {
+        "type": "apoli:self_glow",
+        "use_teams": false,
+        "green": 0,
+        "red": 1,
+        "blue": 1,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:resource",
+                    "resource": "*:*_dye",
+                    "comparison": "==",
+                    "compare_to": 6
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "magenta2": {
+        "type": "apoli:particle",
+        "particle": {
+            "type": "dust",
+            "params": "1 0 1 0.8"
+        },
+        "frequency": 8,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:resource",
+                    "resource": "*:*_dye",
+                    "comparison": "==",
+                    "compare_to": 6
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "hit_detect": {
+        "type": "apoli:self_action_on_hit",
+        "cooldown": 20,
+        "entity_action": {
+            "type": "apoli:trigger_cooldown",
+            "power": "*:*_hit"
+        }
+    },
+    "hit": {
+        "type": "apoli:cooldown",
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "hurt_detect": {
+        "type": "apoli:action_when_damage_taken",
+        "cooldown": 20,
+        "entity_action": {
+            "type": "apoli:trigger_cooldown",
+            "power": "*:*_hurt"
+        }
+    },
+    "hurt": {
+        "type": "apoli:cooldown",
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "dye": {
+        "type": "apoli:resource",
+        "min": 0,
+        "max": 6,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "dyed": {
+        "type": "apoli:active_self",
+        "cooldown": 20,
+        "key": {
+            "key": "key.use"
+        },
+        "entity_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:if_else_list",
+                    "actions": [
+                        {
+                            "action": {
+                                "type": "apoli:change_resource",
+                                "resource": "*:*_dye",
+                                "operation": "set",
+                                "change": 1
+                            },
+                            "condition": {
+                                "type": "apoli:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:lime_dye"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "apoli:change_resource",
+                                "resource": "*:*_dye",
+                                "operation": "set",
+                                "change": 2
+                            },
+                            "condition": {
+                                "type": "apoli:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:orange_dye"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "apoli:change_resource",
+                                "resource": "*:*_dye",
+                                "operation": "set",
+                                "change": 3
+                            },
+                            "condition": {
+                                "type": "apoli:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:purple_dye"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "apoli:change_resource",
+                                "resource": "*:*_dye",
+                                "operation": "set",
+                                "change": 4
+                            },
+                            "condition": {
+                                "type": "apoli:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:yellow_dye"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "apoli:change_resource",
+                                "resource": "*:*_dye",
+                                "operation": "set",
+                                "change": 5
+                            },
+                            "condition": {
+                                "type": "apoli:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:cyan_dye"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "action": {
+                                "type": "apoli:change_resource",
+                                "resource": "*:*_dye",
+                                "operation": "set",
+                                "change": 6
+                            },
+                            "condition": {
+                                "type": "apoli:equipped_item",
+                                "equipment_slot": "offhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:magenta_dye"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "apoli:consume"
+                    }
+                }
+            ]
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:sneaking"
+                },
+                {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "apoli:ingredient",
+                        "ingredient": {
+                            "tag": "*:dyes"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "reset": {
+        "type": "apoli:active_self",
+        "cooldown": 20,
+        "key": {
+            "key": "key.use"
+        },
+        "entity_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:change_resource",
+                    "resource": "*:*_dye",
+                    "operation": "set",
+                    "change": 0
+                },
+                {
+                    "type": "apoli:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "apoli:consume"
+                    }
+                },
+                {
+                    "type": "apoli:give",
+                    "preferred_slot": "offhand",
+                    "stack": {
+                        "item": "minecraft:glass_bottle"
+                    }
+                }
+            ]
+        },
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:sneaking"
+                },
+                {
+                    "type": "apoli:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "apoli:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:potion"
+                        }
+                    }
+                },
+                {
+                    "type": "apoli:resource",
+                    "resource": "*:*_dye",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "tooltip": {
+        "type": "apoli:tooltip",
+        "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+                "tag": "*:dyes"
+            }
+        },
+        "text": {
+            "text": "Can be used to change the glow color.",
+            "color": "gray"
+        }
+    },
+    "tooltip2": {
+        "type": "apoli:tooltip",
+        "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+                "item": "minecraft:potion"
+            }
+        },
+        "text": {
+            "text": "Can be used to reset the glow color.",
+            "color": "gray"
+        }
+    },
+
+    "sun": {
+        "type": "apoli:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false,
+            "bar_index": 1
+        }
+    },
+    "looking_up": {
+        "type": "apoli:action_over_time",
+        "interval": 1,
+        "rising_action": {
+            "type": "apoli:change_resource",
+            "resource": "*:*_sun",
+            "operation": "set",
+            "change": 1
+        },
+        "falling_action": {
+            "type": "apoli:change_resource",
+            "resource": "*:*_sun",
+            "operation": "set",
+            "change": 0
+        },
+        "condition": {
+            "type": "apoli:exposed_to_sun"
+        }
+    }
+}

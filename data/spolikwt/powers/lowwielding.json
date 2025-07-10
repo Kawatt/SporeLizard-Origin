@@ -1,0 +1,64 @@
+{
+    "name": "Weak Resolve",
+    "description": "Any hit blocked with a shield will activate its cooldown.",
+    "type": "apoli:multiple",
+    "cool": {
+        "type": "apoli:cooldown",
+        "cooldown": 100,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 16
+        }
+    },
+    "res": {
+        "type": "apoli:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "max_action": {
+            "type": "apoli:and",
+            "actions": [
+                {
+                    "type": "apoli:trigger_cooldown",
+                    "power": "*:*_cool"
+                },
+                {
+                    "type": "apoli:execute_command",
+                    "command": "function spolikwt:reset_shield_start"
+                },
+                {
+                    "type": "apoli:delay",
+                    "action": {
+                        "type": "apoli:execute_command",
+                        "command": "function spolikwt:reset_shield_end"
+                    },
+                    "ticks": 1
+                },
+                {
+                    "type": "apoli:change_resource",
+                    "resource": "*:*_res",
+                    "operation": "set",
+                    "change": 0
+                }
+            ]
+        }
+    },
+    "noshield": {
+        "type": "apoli:prevent_item_use",
+        "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+                "item": "shield"
+            }
+        },
+        "condition": {
+            "type": "apoli:resource",
+            "resource": "*:*_cool",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "orange_dye",
+    "lime_dye",
+    "purple_dye",
+    "yellow_dye",
+    "cyan_dye",
+    "magenta_dye"
+  ]
+}

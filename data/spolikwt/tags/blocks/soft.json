@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "moss_block",
+    "moss_carpet",
+    "#leaves",
+    "#snow",
+    "azalea",
+    "flowering_azalea",
+    "#wool",
+    "#wool_carpets",
+    "#wart_blocks"
+  ]
+}

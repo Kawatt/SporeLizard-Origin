@@ -1,0 +1,36 @@
+{
+    "criteria": {
+      "blocked_with_shield": {
+        "conditions": {
+          "damage": {
+            "blocked": true
+          }
+        },
+        "trigger": "minecraft:entity_hurt_player"
+      }
+    },
+    "display": {
+      "announce_to_chat": false,
+      "description": {
+        "translate": "Use a shield"
+      },
+      "frame": "task",
+      "hidden": true,
+      "icon": {
+        "item": "minecraft:shield",
+        "nbt": "{Damage:0}"
+      },
+      "show_toast": false,
+      "title": {
+        "translate": "Use a shield"
+      }
+    },
+    "requirements": [
+      [
+        "blocked_with_shield"
+      ]
+    ],
+    "rewards": {
+      "function": "spolikwt:blocked_with_shield"
+    }
+}

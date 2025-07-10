@@ -1,0 +1,268 @@
+{
+    "name": "Expert Climber",
+    "description": "You can climb walls, ceilings, through small spaces and up poles.",
+    "type": "origins:multiple",
+    "climbing": {
+        "type": "origins:climbing",
+        "hold_condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_climbing"
+                },
+                {
+                    "type": "origins:block_collision",
+                    "offset_x": 0,
+                    "offset_y": -0.5,
+                    "offset_z": 0
+                }
+            ]
+        },
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:or",
+                            "conditions": [
+                                {
+                                    "type": "origins:and",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 1.8,
+                                            "offset_z": 0,
+                                            "offset_y": 0
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0,
+                                            "offset_z": 1.8,
+                                            "offset_y": 0
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": -1.8,
+                                            "offset_z": 0,
+                                            "offset_y": 0
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0,
+                                            "offset_z": -1.8,
+                                            "offset_y": 0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0.5,
+                                    "offset_z": 0,
+                                    "offset_y": 0
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0,
+                                    "offset_z": 0.5,
+                                    "offset_y": 0
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": -0.5,
+                                    "offset_z": 0,
+                                    "offset_y": 0
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0,
+                                    "offset_z": -0.5,
+                                    "offset_y": 0
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0,
+                                    "offset_z": 0,
+                                    "offset_y": 0.5
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0,
+                                    "offset_z": 0.8,
+                                    "offset_y": 0.5
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0.8,
+                                    "offset_z": 0,
+                                    "offset_y": 0.5
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": -0.8,
+                                    "offset_z": 0,
+                                    "offset_y": 0.5
+                                },
+                                {
+                                    "type": "origins:block_collision",
+                                    "offset_x": 0,
+                                    "offset_z": -0.8,
+                                    "offset_y": 0.5
+                                }
+                            ]
+                        },
+                        {
+                            "type": "apoli:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "apoli:in_block",
+                                            "block_condition": {
+                                                "type": "apoli:in_tag",
+                                                "tag": "*:poles"
+                                            }
+                                        },
+                                        {
+                                            "type": "apoli:in_block",
+                                            "block_condition": {
+                                                "type": "origins:offset",
+                                                "y": 1,
+                                                "condition": {
+                                                    "type": "apoli:block",
+                                                    "block": "minecraft:chain"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "origins:or",
+                                    "conditions": [
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0,
+                                            "offset_z": 0,
+                                            "offset_y": 0.5
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0.5,
+                                            "offset_z": 0,
+                                            "offset_y": 0
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": -0.5,
+                                            "offset_z": 0,
+                                            "offset_y": 0
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0,
+                                            "offset_z": 0.5,
+                                            "offset_y": 0
+                                        },
+                                        {
+                                            "type": "origins:block_collision",
+                                            "offset_x": 0,
+                                            "offset_z": -0.5,
+                                            "offset_y": 0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "apoli:power_active",
+                    "power": "*:*_toggle"
+                }
+            ]
+        }
+    },
+    "fall": {
+        "type": "apoli:modify_falling",
+        "velocity": 0.005,
+        "condition": {
+            "type": "apoli:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                      {
+                        "type": "origins:block_collision",
+                        "offset_x": 0.1,
+                        "offset_y": 0,
+                        "offset_z": 0
+                      },
+                      {
+                        "type": "origins:block_collision",
+                        "offset_x": -0.1,
+                        "offset_y": 0,
+                        "offset_z": 0
+                      },
+                      {
+                        "type": "origins:block_collision",
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "offset_z": 0.1
+                      },
+                      {
+                        "type": "origins:block_collision",
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "offset_z": -0.1
+                      }
+                    ]
+                  },
+                {
+                    "type": "apoli:on_block",
+                    "inverted": true
+                },
+                {
+                    "type": "apoli:fluid_height",
+                    "comparison": "==",
+                    "compare_to": 0,
+                    "fluid": "lava"
+                },
+                {
+                    "type": "apoli:fluid_height",
+                    "comparison": "==",
+                    "compare_to": 0,
+                    "fluid": "water"
+                },
+                {
+                    "type": "origins:block_collision",
+                    "offset_x": 0,
+                    "offset_y": -0.5,
+                    "offset_z": 0,
+                    "inverted": true
+                },
+                {
+                    "type": "apoli:climbing",
+                    "inverted": true
+                },
+                {
+                    "type": "apoli:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "apoli:creative_flying",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "toggle": {
+        "type": "apoli:toggle",
+        "key": {
+            "key": "key.saveToolbarActivator"
+        },
+        "active_by_default": true
+    }
+}

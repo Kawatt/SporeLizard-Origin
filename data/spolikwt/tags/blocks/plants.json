@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    "grass_block",
+    "grass",
+    "tall_grass",
+    "fern",
+    "large_fern",
+    "seagrass",
+    "tall_seagrass",
+    "kelp",
+    "kelp_plant",
+    "#flowers",
+    "moss_block",
+    "moss_carpet",
+    "#leaves",
+    "azalea",
+    "flowering_azalea",
+    "#wart_blocks",
+    "#nylium",
+    "weeping_vines",
+    "weeping_vines_plant",
+    "twisting_vines",
+    "twisting_vines_plant",
+    "#cave_vines",
+    "vine",
+    "glow_lichen",
+    "cactus",
+    "bamboo_sapling",
+    "bamboo"
+  ]
+}

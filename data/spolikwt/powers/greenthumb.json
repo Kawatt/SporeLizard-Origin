@@ -1,0 +1,32 @@
+{
+    "name": "Green Thumb",
+    "description": "While sneaking, you can bonemeal flora at the cost of some food.",
+    "type": "apoli:action_on_block_use",
+    "block_action": {
+        "type": "apoli:bonemeal"
+    },
+    "entity_action": {
+        "type": "apoli:exhaust",
+        "amount": 4
+    },
+    "condition": {
+        "type": "apoli:and",
+        "conditions": [
+            {
+                "type": "apoli:sneaking"
+            },
+            {
+                "type": "apoli:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "apoli:empty"
+                }
+            },
+            {
+                "type": "apoli:food_level",
+                "comparison": ">",
+                "compare_to": 6
+            }
+        ]
+    }
+}

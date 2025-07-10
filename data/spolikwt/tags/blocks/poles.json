@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "chain",
+    "iron_bars",
+    "#fences",
+    "#fence_gates",
+    "#walls"
+  ]
+}

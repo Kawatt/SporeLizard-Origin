@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"spolikwt:climber",
+		"spolikwt:crawl",
+		"spolikwt:tongue",
+		"spolikwt:fall",
+		"spolikwt:greenthumb",
+		"spolikwt:size",
+		"spolikwt:glow",
+		"origins:fragile",
+		"spolikwt:tunnel",
+		"spolikwt:syntesis",
+		"spolikwt:lowwielding"
+	],
+	"icon": {
+		"item": "minecraft:glow_berries",
+		"tag": "{CustomModelData:14609217}"
+	},
+	"order": 10,
+	"impact": 2,
+	"name": "Spore Lizard",
+	"description": "Little critter often seen climbing on walls or tunneling, thrives near plants."
+}

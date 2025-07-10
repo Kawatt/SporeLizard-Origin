@@ -1,0 +1,20 @@
+{
+    "name": "Graceful fall",
+    "description": "When landing on soft floor, you do not take any fall damage.",
+    "type": "origins:invulnerability",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "fall"
+    },
+    "condition": {
+        "type": "origins:in_block",
+        "block_condition": {
+            "type": "origins:offset",
+            "condition": {
+                "type": "origins:in_tag",
+                "tag": "*:soft"
+            },
+            "y": -1
+        }
+    }
+}

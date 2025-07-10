@@ -1,0 +1,154 @@
+{
+    "name": "Tunneler",
+    "description": "When not under the effect of a strength potion, you can only mine natural stone if there are 4 or more other natural stone blocks adjacent to it.",
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "name": "Unbreakable natural stone",
+        "value": -1,
+        "operation": "multiply_total"
+    },
+    "block_condition": {
+        "type": "apoli:and",
+        "conditions": [
+            {
+                "type": "origins:in_tag",
+                "tag": "origins:natural_stone"
+            },
+            {
+                "type": "origins:or",
+                "inverted": true,
+                "conditions": [
+                    {
+                        "type": "apoli:and",
+                        "conditions": [
+                            {
+                                "type": "apoli:offset",
+                                "x": 1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "x": -1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "y": -1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "y": 1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "apoli:and",
+                        "conditions": [
+                            {
+                                "type": "apoli:offset",
+                                "x": 1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "x": -1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "z": -1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "z": 1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            }
+                        ]
+                    }
+                    ,
+                    {
+                        "type": "apoli:and",
+                        "conditions": [
+                            {
+                                "type": "apoli:offset",
+                                "y": 1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "y": -1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "z": -1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            },
+                            {
+                                "type": "apoli:offset",
+                                "z": 1,
+                                "condition": {
+                                    "type": "apoli:in_tag",
+                                    "tag": "*:nothing",
+                                    "inverted": true
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:status_effect",
+        "effect": "minecraft:strength",
+        "inverted": true
+    }
+}
