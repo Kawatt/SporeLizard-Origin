@@ -10,6 +10,7 @@
                 "type": "apoli:raycast",
                 "distance": 12,
                 "fluid_handling": "none",
+                "shape_type": "collider",
                 "bientity_action": {
                     "type": "apoli:if_else",
                     "if_action": {
