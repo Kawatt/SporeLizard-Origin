@@ -1,5 +1,5 @@
 {
-    "name": "Syntesis",
+    "name": "Synthesis",
     "description": "You can only regenerate health when around plants.",
     "type": "apoli:disable_regen",
     "condition": {
