@@ -7,14 +7,26 @@
         "name": "fall"
     },
     "condition": {
-        "type": "origins:in_block",
-        "block_condition": {
-            "type": "origins:offset",
-            "condition": {
-                "type": "origins:in_tag",
-                "tag": "*:soft"
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:offset",
+                    "condition": {
+                        "type": "origins:in_tag",
+                        "tag": "*:soft"
+                    },
+                    "y": -1
+                }
             },
-            "y": -1
-        }
+            {
+                "type": "origins:on_block",
+                "block_condition": {
+                    "type": "origins:in_tag",
+                        "tag": "*:soft"
+                }
+            }
+        ]
     }
 }

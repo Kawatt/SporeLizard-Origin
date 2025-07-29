@@ -26,16 +26,64 @@
                     "power": "*:*_cool"
                 },
                 {
-                    "type": "apoli:execute_command",
-                    "command": "function spolikwt:reset_shield_start"
+                    "type": "apoli:if_else",
+                    "condition": {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "apoli:ingredient",
+                            "ingredient": {
+                                "tag": "*:shields"
+                            }
+                        }
+                    },
+                    "if_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:execute_command",
+                                "command": "function spolikwt:mainhand/reset_shield_start"
+                            },
+                            {
+                                "type": "apoli:delay",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "function spolikwt:mainhand/reset_shield_end"
+                                },
+                                "ticks": 1
+                            }
+                        ]
+                    }
                 },
                 {
-                    "type": "apoli:delay",
-                    "action": {
-                        "type": "apoli:execute_command",
-                        "command": "function spolikwt:reset_shield_end"
+                    "type": "apoli:if_else",
+                    "condition": {
+                        "type": "apoli:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "apoli:ingredient",
+                            "ingredient": {
+                                "tag": "*:shields"
+                            }
+                        }
                     },
-                    "ticks": 1
+                    "if_action": {
+                        "type": "apoli:and",
+                        "actions": [
+                            {
+                                "type": "apoli:execute_command",
+                                "command": "function spolikwt:offhand/reset_shield_start"
+                            },
+                            {
+                                "type": "apoli:delay",
+                                "action": {
+                                    "type": "apoli:execute_command",
+                                    "command": "function spolikwt:offhand/reset_shield_end"
+                                },
+                                "ticks": 1
+                            }
+                        ]
+                    }
                 },
                 {
                     "type": "apoli:change_resource",

@@ -1,0 +1,2 @@
+item replace entity @s weapon.mainhand from entity @e[type=armor_stand,limit=1,sort=nearest,tag=spolikwt.mainhand_reset_shield] weapon.mainhand
+kill @e[type=armor_stand,limit=1,sort=nearest,tag=spolikwt.mainhand_reset_shield]

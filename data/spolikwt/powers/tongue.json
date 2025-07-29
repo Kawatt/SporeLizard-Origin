@@ -55,7 +55,7 @@
                         }
                     }
                 },
-                "command_along_ray": "particle dust 0.1 0.1 0.1 1 ~ ~ ~ 0 0 0 0 1 normal",
+                "command_along_ray": "particle dust{color:[0.1,0.1,0.1],scale:1.0} ~ ~ ~ 0 0 0 0 1 normal",
                 "command_step": 0.5
             },
             {

@@ -4,8 +4,8 @@
     "type": "origins:modify_break_speed",
     "modifier": {
         "name": "Unbreakable natural stone",
-        "value": -1,
-        "operation": "multiply_total"
+        "amount": -1,
+        "operation": "multiply_total_multiplicative"
     },
     "block_condition": {
         "type": "apoli:and",

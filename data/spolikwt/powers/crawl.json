@@ -136,8 +136,8 @@
     "swim_speed": {
         "type": "origins:modify_velocity",
         "modifier": {
-          "value": -0.4,
-          "operation": "multiply_total"
+          "amount": -0.4,
+          "operation": "multiply_total_multiplicative"
         },
         "axes": [
           "x",
