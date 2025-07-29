@@ -14,7 +14,9 @@
 	],
 	"icon": {
 		"id": "minecraft:glow_berries",
-		"tag": "{CustomModelData:14609217}"
+		"components": {
+			"custom_model_data":14609217
+		}
 	},
 	"order": 10,
 	"impact": 2,
